@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main # Change this to the name of the mainline branch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+ 
+      ####################################################################
+      # Put the commands required to run your application test suite.
+      # For example, create and setup the test database, commands 
+      # to run your test suite.
+      - name: Run tests
+        run: bundle exec rails test
