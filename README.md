@@ -7,7 +7,7 @@ by [Michael Hartl](https://www.michaelhartl.com/).
 
 See also the [6th edition README](https://github.com/learnenough/sample_app_6th_ed#readme).
 
-## License
+## License  
 
 All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
 is available jointly under the MIT License and the Beerware License. See
