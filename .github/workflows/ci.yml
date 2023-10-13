@@ -1,11 +1,21 @@
 name: CI
 
 on:
+  # Run on pull request, so that the PR can be analyzed.
   pull_request:
+
+  # Run on merge to the base branch, so that the baseline
+  # AppMap archive can be brought up-to-date.
+  # If your base branch is not 'main', (e.g. 'master', 'develop'),
+  # change this accordingly.
   push:
     branches:
-      - main # Change this to the name of the mainline branch
+      - main
 
+  # Run weekly, so that the baseline AppMap artifact does not expire.
+  schedule:
+    - cron: '0 0 * * 0'
+    
 jobs:
   test:
     runs-on: ubuntu-latest
